@@ -5,10 +5,10 @@ navbar:
   left:
     - text: "Home"
       href: index.html
+    - text: "Before Class"
+      href: installation.html
     - text: "Exercise"
       menu:
-        - text: "Before Class (Installation)"
-          href: installation.html
         - text: "Introduction to R"
           href: Part1-Introduction.html
         - text: "Example Data Analysis"
