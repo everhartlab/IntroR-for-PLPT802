@@ -1,0 +1,289 @@
+DAI,Number,Your name,Area,Treatment,Block
+1,1,Noel,19.808,control,1
+1,2,Noel,9.371,2.53 mm water,1
+1,3,Noel,0,5.07 mm water,1
+1,4,Noel,0.531,10.13 mm water,1
+1,5,Lee,0,10.13 mm water,2
+1,6,Lee,20.914,control,2
+1,7,Lee,0,2.53 mm water,2
+1,8,Lee,0.173,5.07 mm water,2
+1,9,Lee,0,5.07 mm water,3
+1,10,Lee,18.27,10.13 mm water,3
+1,11,Lee,15.206,control,3
+1,12,Lee,21.173,2.53 mm water,3
+1,13,Lee,0,2.53 mm water,4
+1,14,Lee,5.736,5.07 mm water,4
+1,15,Lee,9.524,10.13 mm water,4
+1,16,Lee,11.598,control,4
+1,17,Lee,3.034,control,5
+1,18,Lee,0,2.53 mm water,5
+1,19,Lee,0.458,5.07 mm water,5
+1,20,Lee,1.943,10.13 mm water,5
+1,21,Lee,0,10.13 mm water,6
+1,22,Lee,8.77,control,6
+1,23,Lee,12.053,2.53 mm water,6
+1,24,Lee,13.148,5.07 mm water,6
+1,25,Lee,15.283,5.07 mm water,7
+1,26,Lee,14.839,10.13 mm water,7
+1,27,Lee,12.951,control,7
+1,28,Lee,0,2.53 mm water,7
+1,29,Lee,0,2.53 mm water,8
+1,30,Lee,12.08,5.07 mm water,8
+1,31,Lee,1.737,10.13 mm water,8
+1,32,Lee,20.537,control,8
+1,33,Lee,25.941,control,9
+1,34,Lee,0,2.53 mm water,9
+1,35,Lee,7.428,5.07 mm water,9
+1,36,Lee,1.592,10.13 mm water,9
+1,37,Lee,7.679,10.13 mm water,10
+1,38,Lee,22.998,control,10
+1,39,Lee,3.106,2.53 mm water,10
+1,40,Lee,0,5.07 mm water,10
+1,41,Lee,20.567,5.07 mm water,11
+1,42,Lee,0,10.13 mm water,11
+1,43,Aaron,15.302,control,11
+1,44,Aaron,0,2.53 mm water,11
+1,45,Aaron ,0,2.53 mm water,12
+1,46,Aaron,14.778,5.07 mm water,12
+1,47,Aaron,0,10.13 mm water,12
+1,48,Aaron,23.496,control,12
+3,1,Adam,4.853,control,1
+3,2,Adam,18.86,2.53 mm water,1
+3,3,Adam,1.632,5.07 mm water,1
+3,4,Adam,10.572,10.13 mm water,1
+3,5,Adam,0,10.13 mm water,2
+3,6,Adam,20.54,control,2
+3,7,Adam,0,2.53 mm water,2
+3,8,Adam,5.032,5.07 mm water,2
+3,9,Adam,0,5.07 mm water,3
+3,10,Adam,10.99,10.13 mm water,3
+3,11,Adam,20.577,control,3
+3,12,Adam,13.73,2.53 mm water,3
+3,13,Adam,8.404,2.53 mm water,4
+3,14,Adam,0,5.07 mm water,4
+3,15,Adam,0,10.13 mm water,4
+3,16,Adam,20.374,control,4
+3,17,Aaron ,18.757,control,5
+3,18,Aaron ,2.168,2.53 mm water,5
+3,19,Aaron ,0,5.07 mm water,5
+3,20,Aaron ,8.969,10.13 mm water,5
+3,21,Aaron ,0,10.13 mm water,6
+3,22,Aaron ,0,control,6
+3,23,Aaron ,9.768,2.53 mm water,6
+3,24,Aaron ,0,5.07 mm water,6
+3,25,Aaron ,18.07,5.07 mm water,7
+3,26,Aaron ,18.346,10.13 mm water,7
+3,27,Aaron ,21.004,control,7
+3,28,Aaron ,0,2.53 mm water,7
+3,29,Aaron ,3.396,2.53 mm water,8
+3,30,Aaron ,3.715,5.07 mm water,8
+3,31,Aaron ,0,10.13 mm water,8
+3,32,Aaron ,27.562,control,8
+3,33,Edgar,4.378,control,9
+3,34,Edgar,0.922,2.53 mm water,9
+3,35,Edgar,0,5.07 mm water,9
+3,36,Edgar,0,10.13 mm water,9
+3,37,Edgar,0,10.13 mm water,10
+3,38,Edgar,5.2,control,10
+3,39,Edgar,1.206,2.53 mm water,10
+3,40,Edgar,0,5.07 mm water,10
+3,41,Edgar,0.565,5.07 mm water,11
+3,42,Edgar,1.558,10.13 mm water,11
+3,43,Edgar,3.249,control,11
+3,44,Edgar,0,2.53 mm water,11
+3,45,Edgar,0,2.53 mm water,12
+3,46,Edgar,1.989,5.07 mm water,12
+3,47,Edgar,1.954,10.13 mm water,12
+3,48,Edgar,4.874,control,12
+5,1,Thais,4.883,control,1
+5,2,Thais,0.043,2.53 mm water,1
+5,3,Thais,0.79,5.07 mm water,1
+5,4,Thais,0,10.13 mm water,1
+5,5,Thais,5.114,10.13 mm water,2
+5,6,Thais,3.056,control,2
+5,7,Thais,1.605,2.53 mm water,2
+5,8,Thais,3.636,5.07 mm water,2
+5,9,Thais,5.844,5.07 mm water,3
+5,10,Thais,0.156,10.13 mm water,3
+5,11,Thais,5.618,control,3
+5,12,Thais,3.883,2.53 mm water,3
+5,13,Thais,3.231,2.53 mm water,4
+5,14,Thais,1.904,5.07 mm water,4
+5,15,Thais,3.178,10.13 mm water,4
+5,16,Lindsay,6.982,control,4
+5,17,Lindsay,5.009,control,5
+5,18,Lindsay,1.302,2.53 mm water,5
+5,19,Lindsay,1.713,5.07 mm water,5
+5,20,Lindsay,3.706,10.13 mm water,5
+5,21,Lindsay,3.645,10.13 mm water,6
+5,22,Lindsay,7.928,control,6
+5,23,Lindsay,0,2.53 mm water,6
+5,24,Lindsay,1.283,5.07 mm water,6
+5,25,Lindsay,0,5.07 mm water,7
+5,26,Lindsay,2.141,10.13 mm water,7
+5,27,Lindsay,3.008,control,7
+5,28,Lindsay,2.018,2.53 mm water,7
+5,29,Lindsay,0.409,2.53 mm water,8
+5,30,Lindsay,2.97,5.07 mm water,8
+5,31,Lindsay,0.308,10.13 mm water,8
+5,32,Lindsay,6.897,control,8
+5,33,Elliot,7.436,control,9
+5,34,Elliot,3.427,2.53 mm water,9
+5,35,Elliot,2.257,5.07 mm water,9
+5,36,Elliot,4.952,10.13 mm water,9
+5,37,Elliot,5.177,10.13 mm water,10
+5,38,Elliot,3.22,control,10
+5,39,Elliot,2.375,2.53 mm water,10
+5,40,Elliot,6.44,5.07 mm water,10
+5,41,Elliot,3.864,5.07 mm water,11
+5,42,Elliot,0,10.13 mm water,11
+5,43,Elliot,0.216,control,11
+5,44,Elliot,1.559,2.53 mm water,11
+5,45,Elliot,0,2.53 mm water,12
+5,46,Elliot,2.708,5.07 mm water,12
+5,47,Elliot,7.763,10.13 mm water,12
+5,48,Elliot,4.263,control,12
+7,1,Jessica ,9.142,control,1
+7,2,Jessica ,7.791,2.53 mm water,1
+7,3,Jessica ,6.63,5.07 mm water,1
+7,4,Jessica ,5.999,10.13 mm water,1
+7,5,Jessica ,8.931,10.13 mm water,2
+7,6,Jessica ,5.434,control,2
+7,7,Jessica ,1.156,2.53 mm water,2
+7,8,Jessica ,10.471,5.07 mm water,2
+7,9,Jessica ,6.271,5.07 mm water,3
+7,10,Jessica ,5.393,10.13 mm water,3
+7,11,Jessica ,8.585,control,3
+7,12,Jessica ,0,2.53 mm water,3
+7,13,Jessica ,4.716,2.53 mm water,4
+7,14,Jessica ,5.185,5.07 mm water,4
+7,15,Jessica ,6.353,10.13 mm water,4
+7,16,Jessica ,10.235,control,4
+7,17,Terra,55.971,control,5
+7,18,Terra,13.891,2.53 mm water,5
+7,19,Terra,1.525,5.07 mm water,5
+7,20,Terra,12.636,10.13 mm water,5
+7,21,Terra,24.96,10.13 mm water,6
+7,22,Terra,31.311,control,6
+7,23,Terra,12.637,2.53 mm water,6
+7,24,Terra,14.733,5.07 mm water,6
+7,25,Terra,23.765,5.07 mm water,7
+7,26,Terra,12.978,10.13 mm water,7
+7,27,Terra,21.758,control,7
+7,28,Terra,0,2.53 mm water,7
+7,29,Terra,0.131,2.53 mm water,8
+7,30,Terra,6.613,5.07 mm water,8
+7,31,Terra,4.55,10.13 mm water,8
+7,32,Terra,37.599,control,8
+7,33,Anthony,7.359,control,9
+7,34,Anthony,1.795,2.53 mm water,9
+7,35,Anthony,1.759,5.07 mm water,9
+7,36,Anthony,6.35,10.13 mm water,9
+7,37,Anthony,5.412,10.13 mm water,10
+7,38,Anthony,5.552,control,10
+7,39,Anthony,0,2.53 mm water,10
+7,40,Anthony,1.268,5.07 mm water,10
+7,41,Anthony,6.041,5.07 mm water,11
+7,42,Anthony,3.176,10.13 mm water,11
+7,43,Anthony,5.069,control,11
+7,44,Anthony,8.384,2.53 mm water,11
+7,45,Anthony,0,2.53 mm water,12
+7,46,Anthony,0,5.07 mm water,12
+7,47,Anthony,5.515,10.13 mm water,12
+7,48,Anthony,7.591,control,12
+9,1,Mehmet,8.919,control,1
+9,2,Mehmet,8.796,2.53 mm water,1
+9,3,Mehmet,7.081,5.07 mm water,1
+9,4,Mehmet,4.643,10.13 mm water,1
+9,5,Mehmet,4.739,10.13 mm water,2
+9,6,Mehmet,10.657,control,2
+9,7,Mehmet,8.862,2.53 mm water,2
+9,8,Mehmet,6.634,5.07 mm water,2
+9,9,Mehmet,1.883,5.07 mm water,3
+9,10,Mehmet,7.845,10.13 mm water,3
+9,11,Mehmet,9.73,control,3
+9,12,Mehmet,2.427,2.53 mm water,3
+9,13,Mehmet,6.912,2.53 mm water,4
+9,14,Mehmet,7.44,5.07 mm water,4
+9,15,Mehmet,8.794,10.13 mm water,4
+9,16,Mehmet,10.671,control,4
+9,17,Amer,10.393,control,5
+9,18,Amer,2.631,2.53 mm water,5
+9,19,Amer,5.389,5.07 mm water,5
+9,20,Amer,3.524,10.13 mm water,5
+9,21,Amer,2.958,10.13 mm water,6
+9,22,Amer,8.071,control,6
+9,23,Amer,6.992,2.53 mm water,6
+9,24,Amer,8.032,5.07 mm water,6
+9,25,Amer,6.538,5.07 mm water,7
+9,26,Amer,5.624,10.13 mm water,7
+9,27,Amer,6.356,control,7
+9,28,Amer,4.054,2.53 mm water,7
+9,29,Amer,3.227,2.53 mm water,8
+9,30,Amer,8.24,5.07 mm water,8
+9,31,Amer,8.555,10.13 mm water,8
+9,32,Amer,8.292,control,8
+9,33,Nikita,6.113,control,9
+9,34,Nikita,3.772,2.53 mm water,9
+9,35,Nikita,7.535,5.07 mm water,9
+9,36,Nikita,6.817,10.13 mm water,9
+9,37,Nikita,8.144,10.13 mm water,10
+9,38,Nikita,8.865,control,10
+9,39,Nikita,5.242,2.53 mm water,10
+9,40,Nikita,5.905,5.07 mm water,10
+9,41,Nikita,7,5.07 mm water,11
+9,42,Nikita,8.436,10.13 mm water,11
+9,43,Nikita,5.845,control,11
+9,44,Nikita,2.444,2.53 mm water,11
+9,45,Nikita,1.745,2.53 mm water,12
+9,46,Nikita,6.439,5.07 mm water,12
+9,47,Nikita,5.909,10.13 mm water,12
+9,48,Nikita,7.474,control,12
+11,1,Rodrigo,7.05,control,1
+11,2,Rodrigo,7.796,2.53 mm water,1
+11,3,Rodrigo,6.499,5.07 mm water,1
+11,4,Rodrigo,3.263,10.13 mm water,1
+11,5,Rodrigo,4.166,10.13 mm water,2
+11,6,Rodrigo,11.174,control,2
+11,7,Rodrigo,6.813,2.53 mm water,2
+11,8,Rodrigo,4.792,5.07 mm water,2
+11,9,Rodrigo,2.493,5.07 mm water,3
+11,10,Rodrigo,7.671,10.13 mm water,3
+11,11,Rodrigo,5.434,control,3
+11,12,Rodrigo,2.679,2.53 mm water,3
+11,13,Rodrigo,9.877,2.53 mm water,4
+11,14,Rodrigo,7.636,5.07 mm water,4
+11,15,Rodrigo,8.345,10.13 mm water,4
+11,16,Rodrigo,9.026,control,4
+11,17,Sergio,9.134,control,5
+11,18,Sergio,2.167,2.53 mm water,5
+11,19,Sergio,4.587,5.07 mm water,5
+11,20,Sergio,2.911,10.13 mm water,5
+11,21,Sergio,2.46,10.13 mm water,6
+11,22,Sergio,8.089,control,6
+11,23,Sergio,7.029,2.53 mm water,6
+11,24,Sergio,9.049,5.07 mm water,6
+11,25,Sergio,7.416,5.07 mm water,7
+11,26,Sergio,4.44,10.13 mm water,7
+11,27,Sergio,5.497,control,7
+11,28,Sergio,3.43,2.53 mm water,7
+11,29,Sergio,2.426,2.53 mm water,8
+11,30,Sergio,6.3,5.07 mm water,8
+11,31,Sergio,6.878,10.13 mm water,8
+11,32,Sergio,7.777,control,8
+11,33,Julianne,8.235,control,9
+11,34,Julianne,7.302,2.53 mm water,9
+11,35,Julianne,8.213,5.07 mm water,9
+11,36,Julianne,9.184,10.13 mm water,9
+11,37,Julianne,10.742,10.13 mm water,10
+11,38,Julianne,8.933,control,10
+11,39,Julianne,4.668,2.53 mm water,10
+11,40,Julianne,6.943,5.07 mm water,10
+11,41,,42.692,5.07 mm water,11
+11,42,,20.002,10.13 mm water,11
+11,43,,21.237,control,11
+11,44,,7.896,2.53 mm water,11
+11,45,,8.952,2.53 mm water,12
+11,46,,26.063,5.07 mm water,12
+11,47,,18.278,10.13 mm water,12
+11,48,,25.596,control,12

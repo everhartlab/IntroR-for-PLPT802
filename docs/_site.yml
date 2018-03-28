@@ -1,0 +1,32 @@
+name: "R in Plant Pathology"
+output_dir: "."
+navbar:
+  title: "Intro to R for Residual Fungicide Analysis"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Exercise"
+      menu:
+        - text: "Before Class (Installation)"
+          href: installation.html
+        - text: "Introduction to R"
+          href: Part1-Introduction.html
+        - text: "Example Data Analysis"
+          href: coming-soon.html
+        - text: "Reshaping and Visualization"
+          href: coming-soon.html
+    - text: "Links"
+      menu:
+        - text: "Useful Tools/Links/References"
+          href: refs.html
+output:
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: false
+    toc_depth: 2
+    theme: readable
+    highlight: textmate
+    include:
+      after_body: footer.html
+    css: styles.css

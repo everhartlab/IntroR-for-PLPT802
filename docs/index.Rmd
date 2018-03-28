@@ -1,0 +1,19 @@
+---
+title: "Intro to R for Plant Pathology"
+---
+
+This introduction to R for plant pathology was originally written as a workshop by Drs. Sydney E. Everhart and Zhian N. Kamvar, and modified to the current form for the 2018 course PLPT 802: Ecology & Management of Plant Pathogens. We will first cover the basics of using R and then learn how to analyze data that we collected during class from leaf images. The source code for this website and analyses can be found at: 
+https://github.com/everhartlab/IntroR-for-PLPT802.
+
+## Goals
+
+As a result of taking this workshop you should be able to:
+
+ - find, download, and load necessary packages for analysis
+ - load tabular data into R
+ - understand the basics of data manipulation in R
+ - know what a data frame, vector, and function are
+ - summarize data
+ - visualize data
+ - troubleshoot commmon problems
+

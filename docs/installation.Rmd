@@ -1,0 +1,75 @@
+---
+title: "Before Class"
+---
+
+Exercise Learning Outcomes
+-----------------
+
+In this two-part exercise, I expect to present enough information to get you started on your way to learning R. Because each class period is a 1 hour 15 minutes, my goal is to introduce you to R and then show you an example of how to analyze our data in R, emphasizing problem solving and troubleshooting. By the end of the exercise you should have just enough background to be able to learn more. If you already know some R, please assist people sitting next to you as questions or issues arise.
+
+Required Materials
+------------------
+
+Again, because we only have two class periods, I ask that you come prepared with a laptop that has the most recent versions of [R] and [RStudio] installed.  Please note that a new version of RStudio was released on October 9th, 2017, so make sure you have the most recent version before the workshop.  **Due to time constraints, I cannot provide installation assistance during class. Those who are not prepared for the class may be asked work with another participant to follow along**.
+
+### Installation
+
+Even if you already have [R] installed on your system, you really should make sure its up to date. This ensures that there are no problems due to outdated software. For more details about installing [R], [RStudio], and keeping everything up to date, UBC's [STAT545] page is an excellent resource.
+
+ - [R]
+ - [RStudio]
+ - [Exercise Materials] (zip file; unzip to Desktop)
+ - Data set from class << will be used in Tuesday's exercise
+ - (Once you've installed R) packages "[tidyverse]" and "[agricolae]"
+
+### Verification
+
+Once you have installed [R], we should verify that you have the correct version.
+
+ 1. Open R (or RStudio) on your computer
+ 2. Enter the following in the R console after the `>`    
+        
+        R.version.string == "R version 3.4.2 (2017-09-28)"
+        
+ 3. Make sure the result is **`[1] TRUE`**    
+    (If the result is `[1] FALSE`, please quit R and try the installation again)
+ 
+ 
+### Exercise Materials
+
+The [exercise materials] is a zip file that contains a folder called 
+`IntroR-LesionExercise/` with the folowing structure:
+
+```
+.
+├── IntroR-LesionExercise.Rproj
+├── LICENSE
+├── Makefile
+├── Introduction.R
+├── Analysis.R
+├── Visualization.R
+├── README.md
+├── data/
+│   ├── FungicideExample.csv
+│   └── README.md
+└── docs/
+    └── ...
+```
+
+I am providing the R scripts for the exercise. We will be live-coding some scripts, and **I encourage you to follow along by creating your own R scripts** so that you can get comfortable typing these commands. For those who feel the pace is too fast, or are unable to type the commands, feel free to execute the code in these scripts to follow along.
+
+### Installing Packages
+
+To install [tidyverse] and [agricolae] to your system, open R and type:
+
+```{r, eval = FALSE}
+install.packages(c("tidyverse", "agricolae"), repos = "https://cran.rstudio.com")
+```
+
+
+[stat545]: http://stat545.com/block000_r-rstudio-install.html
+[R]: https://cloud.r-project.org/
+[RStudio]: https://www.rstudio.com/products/rstudio/download/
+[Workshop Materials]: https://github.com/everhartlab/IntroR-at-OSU/archive/master.zip
+[agricolae]: http://tarwi.lamolina.edu.pe/~fmendiburu/
+[tidyverse]: http://tidyverse.org/
