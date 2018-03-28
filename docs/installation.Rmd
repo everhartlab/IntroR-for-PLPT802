@@ -61,6 +61,6 @@ install.packages(c("tidyverse", "agricolae"), repos = "https://cran.rstudio.com"
 [stat545]: http://stat545.com/block000_r-rstudio-install.html
 [R]: https://cloud.r-project.org/
 [RStudio]: https://www.rstudio.com/products/rstudio/download/
-[exercise materials]: https://everhartlab.github.io/IntroR-for-PLPT802/docs/master.zip
+[exercise materials]: https://github.com/everhartlab/IntroR-for-PLPT802/tree/master/docs/master.zip
 [agricolae]: http://tarwi.lamolina.edu.pe/~fmendiburu/
 [tidyverse]: http://tidyverse.org/
