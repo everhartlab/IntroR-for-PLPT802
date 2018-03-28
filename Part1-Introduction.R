@@ -307,11 +307,11 @@ length(year)
 # function will create columns out of vectors that are all the same length. In
 # the function, we just have to specify the columns.
 
-march <- data.frame(day = day, month = month, year = year)
+March <- data.frame(day = day, month = month, year = year)
 
 # Let's inspect this new object in the same way as vectors:
 
-March
+march
 length(March)
 
 # Using the `length()` function, we see it says 3. This is because `March` has three
@@ -331,7 +331,7 @@ ncol(March)
 
 # What happens when we use the `str()` function?
 
-str(March)
+str(march)
 
 # We can see that it's listing the columns we have in our table and showing us
 # how they are represented. Notice the `$` to the left of each column name, 
