@@ -1,3 +1,4 @@
 # An installation file for binder
-install.packages(c("tidyverse", "agricolae"))
+install.packages("tidyverse")
+install.packages("agricolae")
 
