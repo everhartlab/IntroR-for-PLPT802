@@ -5,7 +5,7 @@ title: "R for Plant Pathologists"
 ---
 -->
 
-[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/everhartlab/IntroR-for-PLPT802/master)
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/everhartlab/IntroR-for-PLPT802/master?urlpath=rstudio)
 
 
 This introduction to R for plant pathology was originally written as a workshop by Drs. Sydney E. Everhart and Zhian N. Kamvar, and modified to the current form for the 2018 course PLPT 802: Ecology & Management of Plant Pathogens. 
