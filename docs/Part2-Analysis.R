@@ -49,16 +49,12 @@ list.files("data")
 # figuring out how you can use a function is to look at it's help page. The way
 # you can do that is by typing either help("function_name") or ?function_name.
 
-stop("
-
-     Type ?read.table and answer these three questions:
-     
-     1. What does it do? (Description)
-     2. What are the first three arguments and their defaults? (Usage/Arguments)
-     3. What does it return? (Value)
-     
-     ")
-
+     # Type ?read.table and answer these three questions:
+     # 
+     # 1. What does it do? (Description)
+     # 2. What are the first three arguments and their defaults? (Usage/Arguments)
+     # 3. What does it return? (Value)
+     # 
 
 # In order to read our data into R, we will need to provide three things:
 # 
@@ -84,7 +80,6 @@ fungicide
 
 str(fungicide)
 
-
 # Part III: Finding the right tool for the job
 # --------------------------------------------
 # 
@@ -105,13 +100,11 @@ str(fungicide)
 # 
 # So, how do you calculate this? You could code the trapezoid rule yourself, OR
 # you could find a package that was designed for this. 
-
-stop("
-
-    Do an internet search for AUDPC in R. What did you find?
-
-    ")
-
+#
+#
+#    Do an internet search for AUDPC in R. What did you find?
+#
+#
 # The first thing that likely popped up was the function `audpc()` in the
 # *agricolae* package. If we want to use it, we can download the package to our
 # computer with the function `install.packages()`. This will install a package
@@ -151,13 +144,13 @@ fungicide.audpc <- audpc(evaluation = fungicide[, -1], dates = jdate, type = "re
 # Examples section. Try to copy and paste the code one line at a time and see
 # what happens. Check the evaluaton data relative to the dates and see how it's
 # relevant.
-
-stop("
-
-     Stop and look at the examples from ?audpc.
-     
-     ")
-
+#
+#
+#
+#    Stop and look at the examples from ?audpc.
+#    
+#
+#
 # We can see from example 3, that the data must be arranged where dates are in
 # separate columns. We need to transpose our data. To do this, we can use the
 # `t()` function:
@@ -201,3 +194,6 @@ dir.create("results")
 write.table(fungicide.res, file = "results/audpc.csv", sep = ",", 
             col.names = NA,
             row.names = TRUE)
+
+# Now we're ready to move onto the next part in our exercise using this data, where we 
+# learn to visualize the data.

@@ -11,10 +11,14 @@ navbar:
       menu:
         - text: "Introduction to R"
           href: Part1-Introduction.html
-        - text: "Example Data Analysis"
-          href: coming-soon.html
+        - text: "Our Data Analysis"
+          href: Part2-Fig2Recreation.html
+    - text: "Other Exercises"
+      menu:
+        - text: "Wheat Data Analysis"
+        - href: Part2-Analysis.html
         - text: "Reshaping and Visualization"
-          href: coming-soon.html
+          href: Part3-Visualization.html
     - text: "Links"
       menu:
         - text: "Useful Tools/Links/References"
