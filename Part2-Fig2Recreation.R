@@ -141,9 +141,14 @@ percents <- blocks %>%
 percents
 #' Because figure 2 plotted the average value, we want to summarize our data in
 #' averages. To do this, we need to convert our data back to tidy format by
-#' using the *tidyr* function `gather()`:
+#' using the *tidyr* function `gather()`.
+#' 
+#' Additionally, because we observed some values that were missing or divided by
+#' zero, we need to add a filter that removes these points. For that, we will
+#' use the function `is.finite()`.
 percents <- percents %>%
   gather(key = Treatment, value = Area, -DAI, -Block) %>%
+  filter(is.finite(Area)) %>%  # selecting all the finite values of Area
   mutate(Treatment = factor(Treatment, levels = unique(Treatment))) # reset factor
 percents
 #'
@@ -154,7 +159,7 @@ percents
 #' to plot the data in the manner of Morini *et al.* 2017.
 avgs <- percents %>%
   group_by(DAI, Treatment) %>%
-  summarize(meanArea = mean(Area)) %>%
+  summarize(meanArea = mean(Area, na.rm = TRUE)) %>%
   ungroup()
 avgs
 #'
