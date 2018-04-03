@@ -3,7 +3,7 @@ HTML_FILES := $(filter-out docs/_sessionInfo.html, $(HTML_FILES))
 R_FILES    := $(patsubst %.R, docs/%.html, $(wildcard Part*.R))
 
 .PHONY: all
-all : cleanjunk html
+all : clean html
 
 .PHONY : html
 html : docs/index.html docs/data.html $(HTML_FILES) $(R_FILES)
@@ -23,11 +23,11 @@ docs/%.Rmd : %.R docs/knitopts.R
 	R --slave -e "rmarkdown::render_site('$<')"
 
 .PHONY : clean
-clean :
+clean : cleanjunk
 	$(RM) $(R_FILES)
 	R --slave -e "rmarkdown::clean_site('docs')"
 
 .PHONY : cleanjunk
-cleanjunk :
+cleanjunk : 
 	$(RM) -r results/
 	$(RM) -r data/FungicideTidy.csv

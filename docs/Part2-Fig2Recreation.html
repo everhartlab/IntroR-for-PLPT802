@@ -590,9 +590,11 @@ div.tocify {
 70  11    10     100     47.744319    22.2769506     -20.250756
 71  11    11     100     62.819607  -101.0265103       5.815322
 72  11    12     100     65.025785    -1.8245038      28.590405</code></pre>
-<p>Because figure 2 plotted the average value, we want to summarize our data in averages. To do this, we need to convert our data back to tidy format by using the <em>tidyr</em> function <code>gather()</code>:</p>
+<p>Because figure 2 plotted the average value, we want to summarize our data in averages. To do this, we need to convert our data back to tidy format by using the <em>tidyr</em> function <code>gather()</code>.</p>
+<p>Additionally, because we observed some values that were missing or divided by zero, we need to add a filter that removes these points. For that, we will use the function <code>is.finite()</code>.</p>
 <pre class="r"><code>&gt; percents &lt;- percents %&gt;%
 +   gather(key = Treatment, value = Area, -DAI, -Block) %&gt;%
++   filter(is.finite(Area)) %&gt;%  # selecting all the finite values of Area
 +   mutate(Treatment = factor(Treatment, levels = unique(Treatment))) # reset factor
 &gt; percents</code></pre>
 <pre><code>    DAI Block      Treatment          Area
@@ -613,298 +615,294 @@ div.tocify {
 15    3     3        control   100.0000000
 16    3     4        control   100.0000000
 17    3     5        control   100.0000000
-18    3     6        control           NaN
-19    3     7        control   100.0000000
-20    3     8        control   100.0000000
-21    3     9        control   100.0000000
-22    3    10        control   100.0000000
-23    3    11        control   100.0000000
-24    3    12        control   100.0000000
-25    5     1        control   100.0000000
-26    5     2        control   100.0000000
-27    5     3        control   100.0000000
-28    5     4        control   100.0000000
-29    5     5        control   100.0000000
-30    5     6        control   100.0000000
-31    5     7        control   100.0000000
-32    5     8        control   100.0000000
-33    5     9        control   100.0000000
-34    5    10        control   100.0000000
-35    5    11        control   100.0000000
-36    5    12        control   100.0000000
-37    7     1        control   100.0000000
-38    7     2        control   100.0000000
-39    7     3        control   100.0000000
-40    7     4        control   100.0000000
-41    7     5        control   100.0000000
-42    7     6        control   100.0000000
-43    7     7        control   100.0000000
-44    7     8        control   100.0000000
-45    7     9        control   100.0000000
-46    7    10        control   100.0000000
-47    7    11        control   100.0000000
-48    7    12        control   100.0000000
-49    9     1        control   100.0000000
-50    9     2        control   100.0000000
-51    9     3        control   100.0000000
-52    9     4        control   100.0000000
-53    9     5        control   100.0000000
-54    9     6        control   100.0000000
-55    9     7        control   100.0000000
-56    9     8        control   100.0000000
-57    9     9        control   100.0000000
-58    9    10        control   100.0000000
-59    9    11        control   100.0000000
-60    9    12        control   100.0000000
-61   11     1        control   100.0000000
-62   11     2        control   100.0000000
-63   11     3        control   100.0000000
-64   11     4        control   100.0000000
-65   11     5        control   100.0000000
-66   11     6        control   100.0000000
-67   11     7        control   100.0000000
-68   11     8        control   100.0000000
-69   11     9        control   100.0000000
-70   11    10        control   100.0000000
-71   11    11        control   100.0000000
-72   11    12        control   100.0000000
-73    1     1  2.53 mm water    52.6908320
-74    1     2  2.53 mm water   100.0000000
-75    1     3  2.53 mm water   -39.2410890
-76    1     4  2.53 mm water   100.0000000
-77    1     5  2.53 mm water   100.0000000
-78    1     6  2.53 mm water   -37.4344356
-79    1     7  2.53 mm water   100.0000000
-80    1     8  2.53 mm water   100.0000000
-81    1     9  2.53 mm water   100.0000000
-82    1    10  2.53 mm water    86.4944778
-83    1    11  2.53 mm water   100.0000000
-84    1    12  2.53 mm water   100.0000000
-85    3     1  2.53 mm water  -288.6255924
-86    3     2  2.53 mm water   100.0000000
-87    3     3  2.53 mm water    33.2750158
-88    3     4  2.53 mm water    58.7513498
-89    3     5  2.53 mm water    88.4416485
-90    3     6  2.53 mm water          -Inf
-91    3     7  2.53 mm water   100.0000000
-92    3     8  2.53 mm water    87.6786880
-93    3     9  2.53 mm water    78.9401553
-94    3    10  2.53 mm water    76.8076923
-95    3    11  2.53 mm water   100.0000000
-96    3    12  2.53 mm water   100.0000000
-97    5     1  2.53 mm water    99.1193938
-98    5     2  2.53 mm water    47.4803665
-99    5     3  2.53 mm water    30.8828765
-100   5     4  2.53 mm water    53.7238614
-101   5     5  2.53 mm water    74.0067878
-102   5     6  2.53 mm water   100.0000000
-103   5     7  2.53 mm water    32.9122340
-104   5     8  2.53 mm water    94.0698855
-105   5     9  2.53 mm water    53.9133943
-106   5    10  2.53 mm water    26.2422360
-107   5    11  2.53 mm water  -621.7592593
-108   5    12  2.53 mm water   100.0000000
-109   7     1  2.53 mm water    14.7779479
-110   7     2  2.53 mm water    78.7265366
-111   7     3  2.53 mm water   100.0000000
-112   7     4  2.53 mm water    53.9228139
-113   7     5  2.53 mm water    75.1817906
-114   7     6  2.53 mm water    59.6403820
-115   7     7  2.53 mm water   100.0000000
-116   7     8  2.53 mm water    99.6515865
-117   7     9  2.53 mm water    75.6080989
-118   7    10  2.53 mm water   100.0000000
-119   7    11  2.53 mm water   -65.3975143
-120   7    12  2.53 mm water   100.0000000
-121   9     1  2.53 mm water     1.3790784
-122   9     2  2.53 mm water    16.8433893
-123   9     3  2.53 mm water    75.0565262
-124   9     4  2.53 mm water    35.2263143
-125   9     5  2.53 mm water    74.6848841
-126   9     6  2.53 mm water    13.3688514
-127   9     7  2.53 mm water    36.2177470
-128   9     8  2.53 mm water    61.0829715
-129   9     9  2.53 mm water    38.2954360
-130   9    10  2.53 mm water    40.8685843
-131   9    11  2.53 mm water    58.1864842
-132   9    12  2.53 mm water    76.6523950
-133  11     1  2.53 mm water   -10.5815603
-134  11     2  2.53 mm water    39.0281009
-135  11     3  2.53 mm water    50.6993007
-136  11     4  2.53 mm water    -9.4283182
-137  11     5  2.53 mm water    76.2754543
-138  11     6  2.53 mm water    13.1042156
-139  11     7  2.53 mm water    37.6023285
-140  11     8  2.53 mm water    68.8054520
-141  11     9  2.53 mm water    11.3296903
-142  11    10  2.53 mm water    47.7443188
-143  11    11  2.53 mm water    62.8196073
-144  11    12  2.53 mm water    65.0257853
-145   1     1  5.07 mm water   100.0000000
-146   1     2  5.07 mm water    99.1728029
-147   1     3  5.07 mm water   100.0000000
-148   1     4  5.07 mm water    50.5431971
-149   1     5  5.07 mm water    84.9044166
-150   1     6  5.07 mm water   -49.9201824
-151   1     7  5.07 mm water   -18.0063316
-152   1     8  5.07 mm water    41.1793349
-153   1     9  5.07 mm water    71.3657916
-154   1    10  5.07 mm water   100.0000000
-155   1    11  5.07 mm water   -34.4072670
-156   1    12  5.07 mm water    37.1041879
-157   3     1  5.07 mm water    66.3713167
-158   3     2  5.07 mm water    75.5014606
-159   3     3  5.07 mm water   100.0000000
-160   3     4  5.07 mm water   100.0000000
-161   3     5  5.07 mm water   100.0000000
-162   3     6  5.07 mm water           NaN
-163   3     7  5.07 mm water    13.9687679
-164   3     8  5.07 mm water    86.5212974
-165   3     9  5.07 mm water   100.0000000
-166   3    10  5.07 mm water   100.0000000
-167   3    11  5.07 mm water    82.6100339
-168   3    12  5.07 mm water    59.1916291
-169   5     1  5.07 mm water    83.8214213
-170   5     2  5.07 mm water   -18.9790576
-171   5     3  5.07 mm water    -4.0227839
-172   5     4  5.07 mm water    72.7298768
-173   5     5  5.07 mm water    65.8015572
-174   5     6  5.07 mm water    83.8168517
-175   5     7  5.07 mm water   100.0000000
-176   5     8  5.07 mm water    56.9377990
-177   5     9  5.07 mm water    69.6476600
-178   5    10  5.07 mm water  -100.0000000
-179   5    11  5.07 mm water -1688.8888889
-180   5    12  5.07 mm water    36.4766596
-181   7     1  5.07 mm water    27.4775760
-182   7     2  5.07 mm water   -92.6941480
-183   7     3  5.07 mm water    26.9539895
-184   7     4  5.07 mm water    49.3404983
-185   7     5  5.07 mm water    97.2753747
-186   7     6  5.07 mm water    52.9462489
-187   7     7  5.07 mm water    -9.2241934
-188   7     8  5.07 mm water    82.4117663
-189   7     9  5.07 mm water    76.0972958
-190   7    10  5.07 mm water    77.1613833
-191   7    11  5.07 mm water   -19.1753798
-192   7    12  5.07 mm water   100.0000000
-193   9     1  5.07 mm water    20.6076914
-194   9     2  5.07 mm water    37.7498358
-195   9     3  5.07 mm water    80.6474820
-196   9     4  5.07 mm water    30.2783244
-197   9     5  5.07 mm water    48.1477918
-198   9     6  5.07 mm water     0.4832115
-199   9     7  5.07 mm water    -2.8634361
-200   9     8  5.07 mm water     0.6271105
-201   9     9  5.07 mm water   -23.2619009
-202   9    10  5.07 mm water    33.3897349
-203   9    11  5.07 mm water   -19.7604790
-204   9    12  5.07 mm water    13.8480064
-205  11     1  5.07 mm water     7.8156028
-206  11     2  5.07 mm water    57.1147306
-207  11     3  5.07 mm water    54.1221936
-208  11     4  5.07 mm water    15.3999557
-209  11     5  5.07 mm water    49.7810379
-210  11     6  5.07 mm water   -11.8679688
-211  11     7  5.07 mm water   -34.9099509
-212  11     8  5.07 mm water    18.9918992
-213  11     9  5.07 mm water     0.2671524
-214  11    10  5.07 mm water    22.2769506
-215  11    11  5.07 mm water  -101.0265103
-216  11    12  5.07 mm water    -1.8245038
-217   1     1 10.13 mm water    97.3192649
-218   1     2 10.13 mm water   100.0000000
-219   1     3 10.13 mm water   -20.1499408
-220   1     4 10.13 mm water    17.8823935
-221   1     5 10.13 mm water    35.9591299
-222   1     6 10.13 mm water   100.0000000
-223   1     7 10.13 mm water   -14.5780249
-224   1     8 10.13 mm water    91.5420948
-225   1     9 10.13 mm water    93.8629968
-226   1    10 10.13 mm water    66.6101400
-227   1    11 10.13 mm water   100.0000000
-228   1    12 10.13 mm water   100.0000000
-229   3     1 10.13 mm water  -117.8446322
-230   3     2 10.13 mm water   100.0000000
-231   3     3 10.13 mm water    46.5908539
-232   3     4 10.13 mm water   100.0000000
-233   3     5 10.13 mm water    52.1831849
-234   3     6 10.13 mm water           NaN
-235   3     7 10.13 mm water    12.6547324
-236   3     8 10.13 mm water   100.0000000
-237   3     9 10.13 mm water   100.0000000
-238   3    10 10.13 mm water   100.0000000
-239   3    11 10.13 mm water    52.0467836
-240   3    12 10.13 mm water    59.9097251
-241   5     1 10.13 mm water   100.0000000
-242   5     2 10.13 mm water   -67.3429319
-243   5     3 10.13 mm water    97.2232111
-244   5     4 10.13 mm water    54.4829562
-245   5     5 10.13 mm water    26.0131763
-246   5     6 10.13 mm water    54.0237134
-247   5     7 10.13 mm water    28.8231383
-248   5     8 10.13 mm water    95.5342903
-249   5     9 10.13 mm water    33.4050565
-250   5    10 10.13 mm water   -60.7763975
-251   5    11 10.13 mm water   100.0000000
-252   5    12 10.13 mm water   -82.1018062
-253   7     1 10.13 mm water    34.3797856
-254   7     2 10.13 mm water   -64.3540670
-255   7     3 10.13 mm water    37.1811299
-256   7     4 10.13 mm water    37.9286761
-257   7     5 10.13 mm water    77.4240232
-258   7     6 10.13 mm water    20.2836064
-259   7     7 10.13 mm water    40.3529736
-260   7     8 10.13 mm water    87.8986143
-261   7     9 10.13 mm water    13.7111021
-262   7    10 10.13 mm water     2.5216138
-263   7    11 10.13 mm water    37.3446439
-264   7    12 10.13 mm water    27.3481755
-265   9     1 10.13 mm water    47.9425945
-266   9     2 10.13 mm water    55.5315755
-267   9     3 10.13 mm water    19.3730730
-268   9     4 10.13 mm water    17.5897292
-269   9     5 10.13 mm water    66.0925623
-270   9     6 10.13 mm water    63.3502664
-271   9     7 10.13 mm water    11.5166772
-272   9     8 10.13 mm water    -3.1717318
-273   9     9 10.13 mm water   -11.5164404
-274   9    10 10.13 mm water     8.1331077
-275   9    11 10.13 mm water   -44.3284859
-276   9    12 10.13 mm water    20.9392561
-277  11     1 10.13 mm water    53.7163121
-278  11     2 10.13 mm water    62.7170217
-279  11     3 10.13 mm water   -41.1667280
-280  11     4 10.13 mm water     7.5448704
-281  11     5 10.13 mm water    68.1300635
-282  11     6 10.13 mm water    69.5883298
-283  11     7 10.13 mm water    19.2286702
-284  11     8 10.13 mm water    11.5597274
-285  11     9 10.13 mm water   -11.5239830
-286  11    10 10.13 mm water   -20.2507556
-287  11    11 10.13 mm water     5.8153223
-288  11    12 10.13 mm water    28.5904048</code></pre>
+18    3     7        control   100.0000000
+19    3     8        control   100.0000000
+20    3     9        control   100.0000000
+21    3    10        control   100.0000000
+22    3    11        control   100.0000000
+23    3    12        control   100.0000000
+24    5     1        control   100.0000000
+25    5     2        control   100.0000000
+26    5     3        control   100.0000000
+27    5     4        control   100.0000000
+28    5     5        control   100.0000000
+29    5     6        control   100.0000000
+30    5     7        control   100.0000000
+31    5     8        control   100.0000000
+32    5     9        control   100.0000000
+33    5    10        control   100.0000000
+34    5    11        control   100.0000000
+35    5    12        control   100.0000000
+36    7     1        control   100.0000000
+37    7     2        control   100.0000000
+38    7     3        control   100.0000000
+39    7     4        control   100.0000000
+40    7     5        control   100.0000000
+41    7     6        control   100.0000000
+42    7     7        control   100.0000000
+43    7     8        control   100.0000000
+44    7     9        control   100.0000000
+45    7    10        control   100.0000000
+46    7    11        control   100.0000000
+47    7    12        control   100.0000000
+48    9     1        control   100.0000000
+49    9     2        control   100.0000000
+50    9     3        control   100.0000000
+51    9     4        control   100.0000000
+52    9     5        control   100.0000000
+53    9     6        control   100.0000000
+54    9     7        control   100.0000000
+55    9     8        control   100.0000000
+56    9     9        control   100.0000000
+57    9    10        control   100.0000000
+58    9    11        control   100.0000000
+59    9    12        control   100.0000000
+60   11     1        control   100.0000000
+61   11     2        control   100.0000000
+62   11     3        control   100.0000000
+63   11     4        control   100.0000000
+64   11     5        control   100.0000000
+65   11     6        control   100.0000000
+66   11     7        control   100.0000000
+67   11     8        control   100.0000000
+68   11     9        control   100.0000000
+69   11    10        control   100.0000000
+70   11    11        control   100.0000000
+71   11    12        control   100.0000000
+72    1     1  2.53 mm water    52.6908320
+73    1     2  2.53 mm water   100.0000000
+74    1     3  2.53 mm water   -39.2410890
+75    1     4  2.53 mm water   100.0000000
+76    1     5  2.53 mm water   100.0000000
+77    1     6  2.53 mm water   -37.4344356
+78    1     7  2.53 mm water   100.0000000
+79    1     8  2.53 mm water   100.0000000
+80    1     9  2.53 mm water   100.0000000
+81    1    10  2.53 mm water    86.4944778
+82    1    11  2.53 mm water   100.0000000
+83    1    12  2.53 mm water   100.0000000
+84    3     1  2.53 mm water  -288.6255924
+85    3     2  2.53 mm water   100.0000000
+86    3     3  2.53 mm water    33.2750158
+87    3     4  2.53 mm water    58.7513498
+88    3     5  2.53 mm water    88.4416485
+89    3     7  2.53 mm water   100.0000000
+90    3     8  2.53 mm water    87.6786880
+91    3     9  2.53 mm water    78.9401553
+92    3    10  2.53 mm water    76.8076923
+93    3    11  2.53 mm water   100.0000000
+94    3    12  2.53 mm water   100.0000000
+95    5     1  2.53 mm water    99.1193938
+96    5     2  2.53 mm water    47.4803665
+97    5     3  2.53 mm water    30.8828765
+98    5     4  2.53 mm water    53.7238614
+99    5     5  2.53 mm water    74.0067878
+100   5     6  2.53 mm water   100.0000000
+101   5     7  2.53 mm water    32.9122340
+102   5     8  2.53 mm water    94.0698855
+103   5     9  2.53 mm water    53.9133943
+104   5    10  2.53 mm water    26.2422360
+105   5    11  2.53 mm water  -621.7592593
+106   5    12  2.53 mm water   100.0000000
+107   7     1  2.53 mm water    14.7779479
+108   7     2  2.53 mm water    78.7265366
+109   7     3  2.53 mm water   100.0000000
+110   7     4  2.53 mm water    53.9228139
+111   7     5  2.53 mm water    75.1817906
+112   7     6  2.53 mm water    59.6403820
+113   7     7  2.53 mm water   100.0000000
+114   7     8  2.53 mm water    99.6515865
+115   7     9  2.53 mm water    75.6080989
+116   7    10  2.53 mm water   100.0000000
+117   7    11  2.53 mm water   -65.3975143
+118   7    12  2.53 mm water   100.0000000
+119   9     1  2.53 mm water     1.3790784
+120   9     2  2.53 mm water    16.8433893
+121   9     3  2.53 mm water    75.0565262
+122   9     4  2.53 mm water    35.2263143
+123   9     5  2.53 mm water    74.6848841
+124   9     6  2.53 mm water    13.3688514
+125   9     7  2.53 mm water    36.2177470
+126   9     8  2.53 mm water    61.0829715
+127   9     9  2.53 mm water    38.2954360
+128   9    10  2.53 mm water    40.8685843
+129   9    11  2.53 mm water    58.1864842
+130   9    12  2.53 mm water    76.6523950
+131  11     1  2.53 mm water   -10.5815603
+132  11     2  2.53 mm water    39.0281009
+133  11     3  2.53 mm water    50.6993007
+134  11     4  2.53 mm water    -9.4283182
+135  11     5  2.53 mm water    76.2754543
+136  11     6  2.53 mm water    13.1042156
+137  11     7  2.53 mm water    37.6023285
+138  11     8  2.53 mm water    68.8054520
+139  11     9  2.53 mm water    11.3296903
+140  11    10  2.53 mm water    47.7443188
+141  11    11  2.53 mm water    62.8196073
+142  11    12  2.53 mm water    65.0257853
+143   1     1  5.07 mm water   100.0000000
+144   1     2  5.07 mm water    99.1728029
+145   1     3  5.07 mm water   100.0000000
+146   1     4  5.07 mm water    50.5431971
+147   1     5  5.07 mm water    84.9044166
+148   1     6  5.07 mm water   -49.9201824
+149   1     7  5.07 mm water   -18.0063316
+150   1     8  5.07 mm water    41.1793349
+151   1     9  5.07 mm water    71.3657916
+152   1    10  5.07 mm water   100.0000000
+153   1    11  5.07 mm water   -34.4072670
+154   1    12  5.07 mm water    37.1041879
+155   3     1  5.07 mm water    66.3713167
+156   3     2  5.07 mm water    75.5014606
+157   3     3  5.07 mm water   100.0000000
+158   3     4  5.07 mm water   100.0000000
+159   3     5  5.07 mm water   100.0000000
+160   3     7  5.07 mm water    13.9687679
+161   3     8  5.07 mm water    86.5212974
+162   3     9  5.07 mm water   100.0000000
+163   3    10  5.07 mm water   100.0000000
+164   3    11  5.07 mm water    82.6100339
+165   3    12  5.07 mm water    59.1916291
+166   5     1  5.07 mm water    83.8214213
+167   5     2  5.07 mm water   -18.9790576
+168   5     3  5.07 mm water    -4.0227839
+169   5     4  5.07 mm water    72.7298768
+170   5     5  5.07 mm water    65.8015572
+171   5     6  5.07 mm water    83.8168517
+172   5     7  5.07 mm water   100.0000000
+173   5     8  5.07 mm water    56.9377990
+174   5     9  5.07 mm water    69.6476600
+175   5    10  5.07 mm water  -100.0000000
+176   5    11  5.07 mm water -1688.8888889
+177   5    12  5.07 mm water    36.4766596
+178   7     1  5.07 mm water    27.4775760
+179   7     2  5.07 mm water   -92.6941480
+180   7     3  5.07 mm water    26.9539895
+181   7     4  5.07 mm water    49.3404983
+182   7     5  5.07 mm water    97.2753747
+183   7     6  5.07 mm water    52.9462489
+184   7     7  5.07 mm water    -9.2241934
+185   7     8  5.07 mm water    82.4117663
+186   7     9  5.07 mm water    76.0972958
+187   7    10  5.07 mm water    77.1613833
+188   7    11  5.07 mm water   -19.1753798
+189   7    12  5.07 mm water   100.0000000
+190   9     1  5.07 mm water    20.6076914
+191   9     2  5.07 mm water    37.7498358
+192   9     3  5.07 mm water    80.6474820
+193   9     4  5.07 mm water    30.2783244
+194   9     5  5.07 mm water    48.1477918
+195   9     6  5.07 mm water     0.4832115
+196   9     7  5.07 mm water    -2.8634361
+197   9     8  5.07 mm water     0.6271105
+198   9     9  5.07 mm water   -23.2619009
+199   9    10  5.07 mm water    33.3897349
+200   9    11  5.07 mm water   -19.7604790
+201   9    12  5.07 mm water    13.8480064
+202  11     1  5.07 mm water     7.8156028
+203  11     2  5.07 mm water    57.1147306
+204  11     3  5.07 mm water    54.1221936
+205  11     4  5.07 mm water    15.3999557
+206  11     5  5.07 mm water    49.7810379
+207  11     6  5.07 mm water   -11.8679688
+208  11     7  5.07 mm water   -34.9099509
+209  11     8  5.07 mm water    18.9918992
+210  11     9  5.07 mm water     0.2671524
+211  11    10  5.07 mm water    22.2769506
+212  11    11  5.07 mm water  -101.0265103
+213  11    12  5.07 mm water    -1.8245038
+214   1     1 10.13 mm water    97.3192649
+215   1     2 10.13 mm water   100.0000000
+216   1     3 10.13 mm water   -20.1499408
+217   1     4 10.13 mm water    17.8823935
+218   1     5 10.13 mm water    35.9591299
+219   1     6 10.13 mm water   100.0000000
+220   1     7 10.13 mm water   -14.5780249
+221   1     8 10.13 mm water    91.5420948
+222   1     9 10.13 mm water    93.8629968
+223   1    10 10.13 mm water    66.6101400
+224   1    11 10.13 mm water   100.0000000
+225   1    12 10.13 mm water   100.0000000
+226   3     1 10.13 mm water  -117.8446322
+227   3     2 10.13 mm water   100.0000000
+228   3     3 10.13 mm water    46.5908539
+229   3     4 10.13 mm water   100.0000000
+230   3     5 10.13 mm water    52.1831849
+231   3     7 10.13 mm water    12.6547324
+232   3     8 10.13 mm water   100.0000000
+233   3     9 10.13 mm water   100.0000000
+234   3    10 10.13 mm water   100.0000000
+235   3    11 10.13 mm water    52.0467836
+236   3    12 10.13 mm water    59.9097251
+237   5     1 10.13 mm water   100.0000000
+238   5     2 10.13 mm water   -67.3429319
+239   5     3 10.13 mm water    97.2232111
+240   5     4 10.13 mm water    54.4829562
+241   5     5 10.13 mm water    26.0131763
+242   5     6 10.13 mm water    54.0237134
+243   5     7 10.13 mm water    28.8231383
+244   5     8 10.13 mm water    95.5342903
+245   5     9 10.13 mm water    33.4050565
+246   5    10 10.13 mm water   -60.7763975
+247   5    11 10.13 mm water   100.0000000
+248   5    12 10.13 mm water   -82.1018062
+249   7     1 10.13 mm water    34.3797856
+250   7     2 10.13 mm water   -64.3540670
+251   7     3 10.13 mm water    37.1811299
+252   7     4 10.13 mm water    37.9286761
+253   7     5 10.13 mm water    77.4240232
+254   7     6 10.13 mm water    20.2836064
+255   7     7 10.13 mm water    40.3529736
+256   7     8 10.13 mm water    87.8986143
+257   7     9 10.13 mm water    13.7111021
+258   7    10 10.13 mm water     2.5216138
+259   7    11 10.13 mm water    37.3446439
+260   7    12 10.13 mm water    27.3481755
+261   9     1 10.13 mm water    47.9425945
+262   9     2 10.13 mm water    55.5315755
+263   9     3 10.13 mm water    19.3730730
+264   9     4 10.13 mm water    17.5897292
+265   9     5 10.13 mm water    66.0925623
+266   9     6 10.13 mm water    63.3502664
+267   9     7 10.13 mm water    11.5166772
+268   9     8 10.13 mm water    -3.1717318
+269   9     9 10.13 mm water   -11.5164404
+270   9    10 10.13 mm water     8.1331077
+271   9    11 10.13 mm water   -44.3284859
+272   9    12 10.13 mm water    20.9392561
+273  11     1 10.13 mm water    53.7163121
+274  11     2 10.13 mm water    62.7170217
+275  11     3 10.13 mm water   -41.1667280
+276  11     4 10.13 mm water     7.5448704
+277  11     5 10.13 mm water    68.1300635
+278  11     6 10.13 mm water    69.5883298
+279  11     7 10.13 mm water    19.2286702
+280  11     8 10.13 mm water    11.5597274
+281  11     9 10.13 mm water   -11.5239830
+282  11    10 10.13 mm water   -20.2507556
+283  11    11 10.13 mm water     5.8153223
+284  11    12 10.13 mm water    28.5904048</code></pre>
 </div>
 <div id="step-4-summarize-the-average-lesion-area" class="section level2">
 <h2>Step 4: Summarize the average lesion area</h2>
 <p>We can summarize the average area per DAI and Treatment, which will allow us to plot the data in the manner of Morini <em>et al.</em> 2017.</p>
 <pre class="r"><code>&gt; avgs &lt;- percents %&gt;%
 +   group_by(DAI, Treatment) %&gt;%
-+   summarize(meanArea = mean(Area)) %&gt;%
++   summarize(meanArea = mean(Area, na.rm = TRUE)) %&gt;%
 +   ungroup()
 &gt; avgs</code></pre>
 <pre><code># A tibble: 24 x 3
      DAI Treatment      meanArea
    &lt;int&gt; &lt;fct&gt;             &lt;dbl&gt;
- 1     1 control          100   
+ 1     1 control          100.  
  2     1 2.53 mm water     71.9 
  3     1 5.07 mm water     48.5 
  4     1 10.13 mm water    64.0 
- 5     3 control          NaN   
- 6     3 2.53 mm water   -Inf   
- 7     3 5.07 mm water    NaN   
- 8     3 10.13 mm water   NaN   
- 9     5 control          100   
+ 5     3 control          100.  
+ 6     3 2.53 mm water     48.7 
+ 7     3 5.07 mm water     80.4 
+ 8     3 10.13 mm water    55.0 
+ 9     5 control          100.  
 10     5 2.53 mm water      7.55
 # ... with 14 more rows</code></pre>
 <p>Now that we have our averages, we can plot it using <em>ggplot2</em></p>
@@ -919,8 +917,8 @@ div.tocify {
 +     y = &quot;Percent disease control&quot;,
 +     pch = &quot;Irrigation levels&quot;,
 +     lty = &quot;Irrigation levels&quot;))</code></pre>
-<pre><code>Warning: Removed 5 rows containing non-finite values (stat_smooth).</code></pre>
-<pre><code>Warning: Removed 4 rows containing missing values (geom_point).</code></pre>
+<pre><code>Warning: Removed 1 rows containing non-finite values (stat_smooth).</code></pre>
+<pre><code>Warning: Removed 1 rows containing missing values (geom_point).</code></pre>
 <p><img src="Part2-Fig2Recreation_files/figure-html/unnamed-chunk-12-1.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
 </div>
@@ -938,8 +936,8 @@ div.tocify {
 +     y = &quot;Percent disease control&quot;,
 +     pch = &quot;Irrigation levels&quot;,
 +     lty = &quot;Irrigation levels&quot;))</code></pre>
-<pre><code>Warning: Removed 41 rows containing non-finite values (stat_smooth).</code></pre>
-<pre><code>Warning: Removed 40 rows containing missing values (geom_point).</code></pre>
+<pre><code>Warning: Removed 37 rows containing non-finite values (stat_smooth).</code></pre>
+<pre><code>Warning: Removed 37 rows containing missing values (geom_point).</code></pre>
 <pre><code>Warning: Removed 80 rows containing missing values (geom_smooth).</code></pre>
 <p><img src="Part2-Fig2Recreation_files/figure-html/unnamed-chunk-13-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>With ggplot2, we can spread the data out into “facets”:</p>
@@ -956,8 +954,8 @@ div.tocify {
 +     y = &quot;Percent disease control&quot;,
 +     pch = &quot;Irrigation levels&quot;,
 +     lty = &quot;Irrigation levels&quot;))</code></pre>
-<pre><code>Warning: Removed 41 rows containing non-finite values (stat_smooth).</code></pre>
-<pre><code>Warning: Removed 40 rows containing missing values (geom_point).</code></pre>
+<pre><code>Warning: Removed 37 rows containing non-finite values (stat_smooth).</code></pre>
+<pre><code>Warning: Removed 37 rows containing missing values (geom_point).</code></pre>
 <pre><code>Warning: Removed 80 rows containing missing values (geom_smooth).</code></pre>
 <p><img src="Part2-Fig2Recreation_files/figure-html/unnamed-chunk-14-1.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
